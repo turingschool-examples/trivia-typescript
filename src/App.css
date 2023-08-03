@@ -2,3 +2,18 @@
   text-align: center;
 }
 
+.qa-container {
+  border: 1px solid #BBB;
+  padding: 20px;
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+button {
+  font-size: 1em;
+}
+
+.btn-answer {
+  margin: 10px auto;
+  display: block;
+}

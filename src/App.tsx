@@ -6,6 +6,7 @@ import QuestionAndAnswer from './QuestionAndAnswer';
 
 function App() {
   const [questionInfo, setQuestionInfo] = useState<Question | null>(null);
+  const [score, setScore] = useState<number>(0);
   
   function getTriviaQuestion(): void {
     fetch("https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple")
@@ -36,9 +37,11 @@ function App() {
     <div className="App">
       <h1>Trivia with TS</h1>
 
-      <button onClick={getTriviaQuestion}>Quiz Me!</button>
+      <h3>Current Score: {score}</h3>
 
-      {questionInfo && <QuestionAndAnswer questionInfo={questionInfo} />}
+      <button onClick={getTriviaQuestion}>Quiz Me!</button>
+  
+      {questionInfo && <QuestionAndAnswer questionInfo={questionInfo} setScore={setScore} />}
     </div>
   );
 }
